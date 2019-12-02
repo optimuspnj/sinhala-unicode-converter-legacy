@@ -1,143 +1,1591 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<title>SinhalaConverter.com | SinGlish UCSC Scheme</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<script src="https://kit.fontawesome.com/efd5b41ab7.js" crossorigin="anonymous"></script>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-		<style>
-			.custom-anchor {
-			color: #ffffff;
-			}
-			.custom-anchor:hover {
-			color: #ffffff;
-			}
-		</style>
-	</head>
-	<body onload="javascript:txtBox.box1.focus();">
-		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-			<a class="navbar-brand" href="./index.html">SinhalaConverter.com</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-			<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="collapsibleNavbar">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="./index.html"><i class="fas fa-home"></i> Home</a>
-					</li>
-					<li class="nav-item dropdown active">
-						<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-						<i class="fas fa-language"></i> Singlish to Unicode
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item active" href="#"><i class="fas fa-globe-asia"></i>
-							SinGlish [UCSC] Scheme</a>
-							<a class="dropdown-item" href="./singlish_unicode2.html"><i class="fas fa-mobile-alt"></i>
-							SinGlish Phonetic [Helakuru] Scheme</a>
-						</div>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-						<i class="fas fa-keyboard"></i> Wijesekara Layout & Unicode
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="./unicode_fmabhaya.html"><i class="fas fa-globe-asia"></i>
-							Unicode to FMAbhaya</a>
-							<a class="dropdown-item" href="./fmabhaya_unicode.html"><i class="far fa-keyboard"></i>
-							FMAbhaya to Unicode</a>
-						</div>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="./about.html"><i class="fas fa-info-circle"></i> About</a>
-					</li>
-				</ul>
-			</div>
-		</nav>
-		<div class="container-fluid mt-2">
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<h1>Singlish to Unicode Converter</h1>
-					<h3>[SinGlish [UCSC] Scheme]</h3>
-				</div>
-			</div>
-			<form name="txtBox" id="txtBox">
-				<div class="row">
-					<div class="col-md-12">
-						<span>Transliterated (SinGlish [UCSC] Scheme)</span>
-						<textarea class="form-control" onkeyup="startText();" onselect="startText();" onclick="startText();" name="box1" rows="7"></textarea>
-						<input class="btn btn-danger float-right mt-1" type="reset" value="Clear" title="Cleared!" data-toggle="popover" data-trigger="focus" data-content="All fields has been cleared!">
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12">
-						<span>Unicode (යුනිකෝඩ්)</span>
-						<textarea class="form-control" name="box2" id="unicode" rows="7"></textarea>
-						<input class="btn btn-success float-right mt-1" id="copy" onclick="copyText()" type="button" value="Copy" title="Copied!" data-toggle="popover" data-content="Converted text has been copied to the clipboard.">
-					</div>
-				</div>
-			</form>
-		</div>
-		<footer class="bg-dark mt-3">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-6">
-						<div class="row">
-							<div class="col-md-6">
-								<ul class="list-group list-group-flush">
-									<li class="list-group-item bg-dark">
-										<span class="custom-anchor"><i class="fas fa-language"></i> Singlish to Unicode</span>
-										<ul class="list-group list-group-flush">
-											<li class="list-group-item bg-dark"><a href="#"
-												class="custom-anchor"><i class="fas fa-globe-asia"></i> SinGlish [UCSC]
-												Scheme</a>
-											</li>
-											<li class="list-group-item bg-dark"><a href="./singlish_unicode2.html"
-												class="custom-anchor"><i class="fas fa-mobile-alt"></i> SinGlish
-												Phonetic
-												[Helakuru] Scheme</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-							<div class="col-md-6">
-								<ul class="list-group list-group-flush">
-									<li class="list-group-item bg-dark">
-										<span class="custom-anchor"><i class="fas fa-keyboard"></i> Wijesekara Layout & Unicode</span>
-										<ul class="list-group list-group-flush">
-											<li class="list-group-item bg-dark"><a href="./unicode_fmabhaya.html"
-												class="custom-anchor"><i class="fas fa-globe-asia"></i>
-												Unicode to FMAbhaya</a>
-											<li class="list-group-item bg-dark"><a href="./fmabhaya_unicode.html"
-												class="custom-anchor"><i class="far fa-keyboard"></i>
-												FMAbhaya to Unicode</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-6">
-						<ul class="list-group list-group-flush">
-							<li class="list-group-item bg-dark"><a href="./index.html" class="custom-anchor"><i
-								class="fas fa-home"></i> Home</a></li>
-							<li class="list-group-item bg-dark"><a href="./about.html" class="custom-anchor"><i
-								class="fas fa-info-circle"></i> About</a></li>
-						</ul>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12  text-center text-white my-3">
-						<span>&copy; All Rights Reserved</span>
-					</div>
-				</div>
-			</div>
-		</footer>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-		<script src="./js/stranslations1.js"></script>
-	</body>
+   <head>
+      <title>SinhalaConverter.com | SinGlish UCSC Scheme</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://kit.fontawesome.com/efd5b41ab7.js" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <style>
+         /*These styles should move to an external css. This is temporary.*/
+         .custom-anchor {
+         color: #ffffff;
+         }
+         .custom-anchor:hover {
+         color: #ffffff;
+         }
+         .english{
+         color: purple;
+         }
+         .sinhala{
+         color: navy;
+         }
+         .title{
+         font-weight:bold;
+         color: navy;
+         }
+         .title2{
+         font-weight:bold;
+         }
+         .col1 {
+         background-color: #EBEBEB;
+         }
+         .col2 {
+         background-color: #EBDDB1;
+         }
+         .col3 {
+         background-color: #E0E2AF;
+         }
+         .col4 {
+         background-color: #F7F0DD;
+         }
+         .col5 {
+         background-color: #F0F1DA;
+         }
+         .col6 {
+         background-color: #E8F4D0;
+         }
+         .col7 {
+         background-color: #F5FBEC;
+         }
+         .col8 {
+         background-color: #DBFB9F;
+         }
+         .col9 {
+         background-color: #f0f7e5;
+         }
+         .col10{
+         background-color: #FCFFB7;
+         }
+         .col11{
+         background-color: #FEFFDF;
+         }
+      </style>
+   </head>
+   <body onload="javascript:txtBox.box1.focus();">
+      <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+         <a class="navbar-brand" href="./index.html">SinhalaConverter.com</a>
+         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+               <li class="nav-item">
+                  <a class="nav-link" href="./index.html"><i class="fas fa-home"></i> Home</a>
+               </li>
+               <li class="nav-item dropdown active">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                  <i class="fas fa-language"></i> Singlish to Unicode
+                  </a>
+                  <div class="dropdown-menu">
+                     <a class="dropdown-item active" href="#"><i class="fas fa-globe-asia"></i>
+                     SinGlish [UCSC] Scheme</a>
+                     <a class="dropdown-item" href="./singlish_unicode2.html"><i class="fas fa-mobile-alt"></i>
+                     SinGlish Phonetic [Helakuru] Scheme</a>
+                  </div>
+               </li>
+               <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                  <i class="fas fa-keyboard"></i> Wijesekara Layout & Unicode
+                  </a>
+                  <div class="dropdown-menu">
+                     <a class="dropdown-item" href="./unicode_fmabhaya.html"><i class="fas fa-globe-asia"></i>
+                     Unicode to FMAbhaya</a>
+                     <a class="dropdown-item" href="./fmabhaya_unicode.html"><i class="far fa-keyboard"></i>
+                     FMAbhaya to Unicode</a>
+                  </div>
+               </li>
+               <li class="nav-item">
+                  <a class="nav-link" href="./about.html"><i class="fas fa-info-circle"></i> About</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+      <div class="container-fluid mt-2">
+         <div class="row">
+            <div class="col-md-12 text-center">
+               <h1>Singlish to Unicode Converter</h1>
+               <h3>[SinGlish [UCSC] Scheme]</h3>
+            </div>
+         </div>
+         <form name="txtBox" id="txtBox">
+            <div class="row">
+               <div class="col-md-12">
+                  <span>Transliterated (SinGlish [UCSC] Scheme)</span>
+                  <textarea class="form-control" onkeyup="startText();" onselect="startText();" onclick="startText();" name="box1" rows="7"></textarea>
+                  <input class="btn btn-danger float-right mt-1" type="reset" value="Clear" title="Cleared!" data-toggle="popover" data-trigger="focus" data-content="All fields has been cleared!">
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <span>Unicode (යුනිකෝඩ්)</span>
+                  <textarea class="form-control" name="box2" id="unicode" rows="7"></textarea>
+                  <input class="btn btn-success float-right mt-1" id="copy" onclick="copyText()" type="button" value="Copy" title="Copied!" data-toggle="popover" data-content="Converted text has been copied to the clipboard.">
+                  <input class="btn btn-info float-left mt-1" value="Show Scheme" type="button" data-toggle="modal" data-target="#scheme">
+               </div>
+            </div>
+         </form>
+         <div class="row">
+            <div class="col-md-12 text-center">
+               <div class="modal fade" id="scheme">
+                  <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
+                     <div class="modal-content">
+                        <div class="modal-header">
+                           <h4 class="modal-title">UCSC Translation Scheme</h4>
+                           <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                           <table style="margin: auto;">
+                              <tr>
+                                 <td rowspan="5"></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td></td>
+                                 <td rowspan="5"></td>
+                              </tr>
+                              <tr>
+                                 <td colspan="5"></td>
+                              </tr>
+                              <tr>
+                                 <td style="text-align: center; vertical-align: top;">
+                                    <table style="margin: auto;">
+                                       <tr>
+                                          <td colspan="9" class="col1">
+                                             <p style="text-align: center;">
+                                                <span class="title">Vowel Sounds</span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td colspan="3" >
+                                             <p style="text-align: center;">
+                                                <span class="title2">Short</span>
+                                             </p>
+                                          </td>
+                                          <td></td>
+                                          <td colspan="5">
+                                             <p style="text-align: center;">
+                                                <span class="title2">Long</span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="col2">
+                                             <p>
+                                                <span class="sinhala">&#3461;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col2">
+                                             <p>
+                                                <span class="english">a</span>
+                                             </p>
+                                          </td>
+                                          <td class="col2">
+                                          </td>
+                                          <td >
+                                          </td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="sinhala">&#3462;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="english">aa</span>
+                                             </p>
+                                          </td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="english">a)</span>
+                                             </p>
+                                          </td>
+                                          <td class="col3">
+                                             &nbsp;
+                                          </td>
+                                          <td width="30" class="col3">
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="col4">
+                                             <p>
+                                                <span class="sinhala">&#3463;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col4">
+                                             <p>
+                                                <span class="english">A</span>
+                                             </p>
+                                          </td>
+                                          <td class="col4" >
+                                             <p>
+                                                <span class="english">\a</span>
+                                             </p>
+                                          </td>
+                                          <td >
+                                             &nbsp;
+                                          </td>
+                                          <td class="col5">
+                                             <p>
+                                                <span class="sinhala">&#3464;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col5">
+                                             <p>
+                                                <span class="english">Aa</span>
+                                             </p>
+                                          </td>
+                                          <td class="col5">
+                                             <p>
+                                                <span class="english">A)</span>
+                                             </p>
+                                          </td>
+                                          <td class="col5">
+                                             <p>
+                                                <span class="english">ae</span>
+                                             </p>
+                                          </td>
+                                          <td class="col5">
+                                             &nbsp;
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="col2" >
+                                             <p>
+                                                <span class="sinhala">&#3465;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col2" >
+                                             <p>
+                                                <span class="english">i</span>
+                                             </p>
+                                          </td>
+                                          <td class="col2">
+                                          </td>
+                                          <td >
+                                          </td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="sinhala">&#3466;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="english">ii</span>
+                                             </p>
+                                          </td>
+                                          <td class="col3" >
+                                             <p>
+                                                <span class="english">i)</span>
+                                             </p>
+                                          </td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="english">ie</span>
+                                             </p>
+                                          </td>
+                                          <td width="24" class="col3">
+                                             <p>
+                                                <span class="english">ee</span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="col4">
+                                             <p>
+                                                <span class="sinhala">&#3473;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col4">
+                                             <p>
+                                                <span class="english">e</span>
+                                             </p>
+                                          </td>
+                                          <td class="col4">
+                                             &nbsp;
+                                          </td>
+                                          <td >
+                                             &nbsp;
+                                          </td>
+                                          <td class="col5" >
+                                             <p>
+                                                <span class="sinhala">&#3474;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col5">
+                                             <p>
+                                                <span class="english">ea</span>
+                                             </p>
+                                          </td>
+                                          <td class="col5" >
+                                             <p>
+                                                <span class="english">e)</span>
+                                             </p>
+                                          </td>
+                                          <td class="col5">
+                                             <p>
+                                                <span class="english">ei</span>
+                                             </p>
+                                          </td>
+                                          <td  class="col5">
+                                             &nbsp;
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="col2" >
+                                             <p>
+                                                <span class="sinhala">&#3476;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col2">
+                                             <p>
+                                                <span class="english">o</span>
+                                             </p>
+                                          </td>
+                                          <td class="col2">
+                                             &nbsp;
+                                          </td>
+                                          <td >
+                                             &nbsp;
+                                          </td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="sinhala">&#3477;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="english">oe</span>
+                                             </p>
+                                          </td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="english">o)</span>
+                                             </p>
+                                          </td>
+                                          <td class="col3">
+                                             &nbsp;
+                                          </td>
+                                          <td class="col3">
+                                             &nbsp;
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="col4">
+                                             <p>
+                                                <span class="sinhala">&#3467;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col4">
+                                             <p>
+                                                <span class="english">u</span>
+                                             </p>
+                                          </td>
+                                          <td class="col4">
+                                             &nbsp;
+                                          </td>
+                                          <td>
+                                             &nbsp;
+                                          </td>
+                                          <td class="col5" >
+                                             <p>
+                                                <span class="sinhala">&#3468;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col5" >
+                                             <p>
+                                                <span class="english">uu</span>
+                                             </p>
+                                          </td>
+                                          <td class="col5">
+                                             <p>
+                                                <span class="english">u)</span>
+                                             </p>
+                                          </td>
+                                          <td class="col5">
+                                             <p>
+                                                <span class="english">oo</span>
+                                             </p>
+                                          </td>
+                                          <td class="col5">
+                                             &nbsp;
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td >
+                                          </td>
+                                          <td >
+                                          </td>
+                                          <td >
+                                          </td>
+                                          <td ></td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="sinhala">&#3478;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="english">au</span>
+                                             </p>
+                                          </td>
+                                          <td class="col3"></td>
+                                          <td class="col3"></td>
+                                          <td class="col3"></td>
+                                       </tr>
+                                    </table>
+                                 </td>
+                                 <td></td>
+                                 <td style="text-align: center; vertical-align: top;">
+                                    <table style="margin: auto;">
+                                       <tr>
+                                          <td colspan="4" class="col1">
+                                             <p style="text-align: center;">
+                                                <span class="title">Auxiliaries</span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td colspan="4">
+                                             <p style="text-align: center;">
+                                                <span class="title2">Special Auxiliaries</span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr class="col6">
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3515;&#3530;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span>&#3512;&#3515;&#3530;&#8205;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">\r</span><i>&lt;letter&gt;</i>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">R</span><i>&lt;letter&gt;</i>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr class="col7">
+                                          <td >
+                                             <p>
+                                                <span class="sinhala">&#3530;&#8205;&#3514;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span>&#3504;&#3530;&#8205;&#3514;</span>&#8205;
+                                             </p>
+                                          </td>
+                                          <td >
+                                             <p>
+                                                <i>&lt;letter&gt;</i><span class="english">Y</span>
+                                             </p>
+                                          </td>
+                                          <td >
+                                             <p>
+                                                <i>&lt;letter&gt;</i><span class="english">\y</span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td colspan="4">
+                                             <p style="text-align: center;">
+                                                <span class="title2">Vowel Sound Auxiliaries</span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr class="col6">
+                                          <td >
+                                             <p>
+                                                <span class="sinhala">&#3544;</span>
+                                             </p>
+                                          </td>
+                                          <td >
+                                             <p>
+                                                <span>&#3482;&#3544;</span>
+                                             </p>
+                                          </td>
+                                          <td >
+                                             <p>
+                                                <i>&lt;letter&gt;</i><span class="english">ru</span>
+                                             </p>
+                                          </td>
+                                          <td >
+                                             &nbsp;
+                                          </td>
+                                       </tr>
+                                       <tr class="col7">
+                                          <td >
+                                             <p>
+                                                <span class="sinhala">&#3551;</span>
+                                             </p>
+                                          </td>
+                                          <td >
+                                             <p>
+                                                <span>&#3488;&#3550;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <i>&lt;letter&gt;</i><span class="english">au</span>
+                                             </p>
+                                          </td>
+                                          <td></td>
+                                       </tr>
+                                       <tr class="col6">
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">ෛ</span> 
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span>&#3512;&#3547;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <i>&lt;letter&gt;</i><span class="english">I</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td colspan="4">
+                                             <p style="text-align: center;">
+                                                <span class="title2">Nasal Sound Auxiliaries</span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr class="col7">
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3500;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span>&#3524;&#3500;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english"><b>nn</b>da</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             &nbsp;
+                                          </td>
+                                       </tr>
+                                       <tr class="col6">
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3507;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span>&#3524;&#3507;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english"><b>nn</b>dha</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                          </td>
+                                       </tr>
+                                       <tr class="col7">
+                                          <td >
+                                             <p>
+                                                <span class="sinhala">&#3487;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span>&#3484;&#3487;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english"><b>nn</b>ga</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                          </td>
+                                       </tr>
+                                    </table>
+                                 </td>
+                                 <td></td>
+                                 <td style="text-align: center; vertical-align: top;">
+                                    <table style="margin: auto;">
+                                       <tr>
+                                          <td colspan="15" class="col1">
+                                             <p style="text-align: center;">
+                                                <span class="title">Consonants</span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td colspan="6">
+                                             <p style="text-align: center;">
+                                                <span class="title2">Common</span>
+                                             </p>
+                                          </td>
+                                          <td colspan="3">
+                                             <p style="text-align: center;">
+                                                <span class="title2">Aspirated</span>
+                                             </p>
+                                          </td>
+                                          <td></td>
+                                          <td colspan="2">
+                                             <p style="text-align: center;">
+                                                <span class="title2">Special</span>
+                                             </p>
+                                          </td>
+                                          <td></td>
+                                          <td colspan="2">
+                                             <p style="text-align: center;">
+                                                <span class="title2">Standalone</span>
+                                             </p>
+                                          </td>
+                                          <td></td>
+                                       </tr>
+                                       <tr>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="sinhala">&#3482;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="english">k</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="sinhala">&#3510;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="english">b</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6"></td>
+                                          <td></td>
+                                          <td class="col8">
+                                             <p>
+                                                <span class="sinhala">&#3483;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col8">
+                                             <p>
+                                                <span class="english">kh</span>
+                                             </p>
+                                          </td>
+                                          <td class="col8">
+                                             <p>
+                                                <span class="english">K</span>
+                                             </p>
+                                          </td>
+                                          <td></td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="sinhala">&#3513;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="english">B</span>
+                                             </p>
+                                          </td>
+                                          <td></td>
+                                          <td class="col2">
+                                             <p>
+                                                <span class="sinhala">&#3458;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col2">
+                                             <p>
+                                                <span class="english">\n</span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="sinhala">&#3484;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="english">g</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="sinhala">&#3512;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="english">m</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             &nbsp;
+                                          </td>
+                                          <td>
+                                             &nbsp;
+                                          </td>
+                                          <td class="col9">
+                                             <p>
+                                                <span class="sinhala">&#3485;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col9">
+                                             <p>
+                                                <span class="english">gh</span>
+                                             </p>
+                                          </td>
+                                          <td class="col9" >
+                                             <p>
+                                                <span class="english">G</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             &nbsp;
+                                          </td>
+                                          <td class="col5">
+                                             <p>
+                                                <span class="sinhala">&#3521;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col5">
+                                             <p>
+                                                <span class="english">sh</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             &nbsp;
+                                          </td>
+                                          <td class="col4">
+                                             <p>
+                                                <span class="sinhala">&#3459;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col4">
+                                             <p>
+                                                <span class="english">\h</span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td height="19" class="col6">
+                                             <p>
+                                                <span class="sinhala">&#3488;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="english">ch</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="sinhala">&#3514;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="english">y</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             &nbsp;
+                                          </td>
+                                          <td>
+                                             &nbsp;
+                                          </td>
+                                          <td class="col8">
+                                             <p>
+                                                <span class="sinhala">&#3489;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col8">
+                                             <p>
+                                                <span class="english">Ch</span>
+                                             </p>
+                                          </td>
+                                          <td class="col8">
+                                             &nbsp;
+                                          </td>
+                                          <td>
+                                             &nbsp;
+                                          </td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="sinhala">&#3522;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="english">Sh</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             &nbsp;
+                                          </td>
+                                          <td class="col2">
+                                             <p>
+                                                <span class="sinhala">&#3500;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col2">
+                                             <p>
+                                                <span class="english">\N</span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td height="19" class="col7">
+                                             <p>
+                                                <span class="sinhala">&#3490;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="english">j</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="sinhala">&#3515;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="english">r</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             &nbsp;
+                                          </td>
+                                          <td>
+                                             &nbsp;
+                                          </td>
+                                          <td class="col9">
+                                             <p>
+                                                <span class="sinhala">&#3496;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col9">
+                                             &nbsp;
+                                          </td>
+                                          <td class="col9">
+                                             <p>
+                                                <span class="english">T</span>
+                                             </p>
+                                          </td>
+                                          <td></td>
+                                          <td class="col5">
+                                             <p>
+                                                <span class="sinhala">&#3526;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col5">
+                                             <p>
+                                                <span class="english">f</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             &nbsp;
+                                          </td>
+                                          <td class="col4">
+                                             <p>
+                                                <span class="sinhala">&#3469;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col4">
+                                             <p>
+                                                <span class="english">\R</span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="sinhala">&#3495;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="english">t</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="sinhala">&#3517;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="english">l</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             &nbsp;
+                                          </td>
+                                          <td>
+                                             &nbsp;
+                                          </td>
+                                          <td class="col8">
+                                             <p>
+                                                <span class="sinhala">&#3498;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col8">
+                                             &nbsp;
+                                          </td>
+                                          <td class="col8">
+                                             <p>
+                                                <span class="english">D</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             &nbsp;
+                                          </td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="sinhala">&#3493;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="english">GN</span>
+                                             </p>
+                                          </td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                       </tr>
+                                       <tr>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="sinhala">&#3497;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="english">d</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="sinhala">&#3520;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="english">w</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             <span class="english">v</span>
+                                          </td>
+                                          <td></td>
+                                          <td class="col9">
+                                             <p>
+                                                <span class="sinhala">&#3502;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col9">
+                                             <p>
+                                                <span class="english">Th</span>
+                                             </p>
+                                          </td>
+                                          <td class="col9"></td>
+                                          <td>
+                                             &nbsp;
+                                          </td>
+                                          <td class="col5">
+                                             <p>
+                                                <span class="sinhala">&#3492;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col5">
+                                             <p>
+                                                <span class="english">KN</span>
+                                             </p>
+                                          </td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                       </tr>
+                                       <tr>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="sinhala">&#3501;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="english">th</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="sinhala">&#3523;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="english">s</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             &nbsp;
+                                          </td>
+                                          <td>
+                                             &nbsp;
+                                          </td>
+                                          <td class="col8">
+                                             <p>
+                                                <span class="sinhala">&#3504;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col8">
+                                             <p>
+                                                <span class="english">Dh</span>
+                                             </p>
+                                          </td>
+                                          <td class="col8">
+                                             &nbsp;
+                                          </td>
+                                          <td></td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="sinhala">&#3491;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="english">q</span>
+                                             </p>
+                                          </td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                       </tr>
+                                       <tr>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="sinhala">&#3503;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="english">dh</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="sinhala">&#3524;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="english">h</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7"></td>
+                                          <td></td>
+                                          <td class="col9">
+                                             <p>
+                                                <span class="sinhala">&#3509;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col9">
+                                             <p>
+                                                <span class="english">ph</span>
+                                             </p>
+                                          </td>
+                                          <td class="col9">
+                                             <p>
+                                                <span class="english">P</span>
+                                             </p>
+                                          </td>
+                                          <td></td>
+                                          <td class="col5">
+                                             <p>
+                                                <span class="sinhala">&#3525;&#3540;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col5">
+                                             <p>
+                                                <span class="english">Lu</span>
+                                             </p>
+                                          </td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                       </tr>
+                                       <tr>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="sinhala">&#3505;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="english">n</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="sinhala">&#3499;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6">
+                                             <p>
+                                                <span class="english">N</span>
+                                             </p>
+                                          </td>
+                                          <td class="col6"></td>
+                                          <td ></td>
+                                          <td class="col8">
+                                             <p>
+                                                <span class="sinhala">&#3511;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col8">
+                                             <p>
+                                                <span class="english">bh</span>
+                                             </p>
+                                          </td>
+                                          <td class="col8" ></td>
+                                          <td ></td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="sinhala">&#3525;&#3542;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col3">
+                                             <p>
+                                                <span class="english">Luu</span>
+                                             </p>
+                                          </td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                       </tr>
+                                       <tr>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="sinhala">&#3508;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="english">p</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="sinhala">&#3525;</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7">
+                                             <p>
+                                                <span class="english">L</span>
+                                             </p>
+                                          </td>
+                                          <td class="col7"></td>
+                                          <td></td>
+                                          <td ></td>
+                                          <td ></td>
+                                          <td></td>
+                                          <td></td>
+                                          <td ></td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                          <td></td>
+                                       </tr>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td colspan="5"></td>
+                              </tr>
+                              <tr>
+                                 <td colspan="5">
+                                    <table style="margin: auto;">
+                                       <tr>
+                                          <td colspan="13" class="col1">
+                                             <p style="text-align: center;">
+                                                <span><strong>Deriving Consonants</strong></span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr class="col10">
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3530;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3535;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3536;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3537;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3538;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3539;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3540;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3542;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3545;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3546;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3548;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3549;</span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr class="col11">
+                                          <td>
+                                             <p>
+                                                <span class="english">k</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">ka</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">kaa</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">kA</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">kAa</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">ki</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">kie</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">ku</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">kuu</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">ke</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">kei</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">ko</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">koe</span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr class="col10">
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3550;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3530;&#8205;&#3515;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3530;&#8205;&#3515;&#3535;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3530;&#8205;&#3515;&#3536;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3530;&#8205;&#3515;&#3537;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3530;&#8205;&#3515;&#3538;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3530;&#8205;&#3515;&#3539;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3544;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3570;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3530;&#8205;&#3515;&#3545;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3530;&#8205;&#3515;&#3546;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3530;&#8205;&#3515;&#3548;</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="sinhala">&#3482;&#3530;&#8205;&#3515;&#3549;</span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                       <tr class="col11">
+                                          <td>
+                                             <p>
+                                                <span class="english">kau</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">kra</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">kraa</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">krA</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">krAa</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">kri</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">krie</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">kru</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">kruu</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">kre</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">krei</span>
+                                             </p>
+                                          </td>
+                                          <td >
+                                             <p>
+                                                <span class="english">kro</span>
+                                             </p>
+                                          </td>
+                                          <td>
+                                             <p>
+                                                <span class="english">kroe</span>
+                                             </p>
+                                          </td>
+                                       </tr>
+                                    </table>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td colspan="5"></td>
+                              </tr>
+                           </table>
+                        </div>
+                        <div class="modal-footer">
+                           <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <footer class="bg-dark mt-3">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-6">
+                  <div class="row">
+                     <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                           <li class="list-group-item bg-dark">
+                              <span class="custom-anchor"><i class="fas fa-language"></i> Singlish to Unicode</span>
+                              <ul class="list-group list-group-flush">
+                                 <li class="list-group-item bg-dark"><a href="#"
+                                    class="custom-anchor"><i class="fas fa-globe-asia"></i> SinGlish [UCSC]
+                                    Scheme</a>
+                                 </li>
+                                 <li class="list-group-item bg-dark"><a href="./singlish_unicode2.html"
+                                    class="custom-anchor"><i class="fas fa-mobile-alt"></i> SinGlish
+                                    Phonetic
+                                    [Helakuru] Scheme</a>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </div>
+                     <div class="col-md-6">
+                        <ul class="list-group list-group-flush">
+                           <li class="list-group-item bg-dark">
+                              <span class="custom-anchor"><i class="fas fa-keyboard"></i> Wijesekara Layout & Unicode</span>
+                              <ul class="list-group list-group-flush">
+                                 <li class="list-group-item bg-dark"><a href="./unicode_fmabhaya.html"
+                                    class="custom-anchor"><i class="fas fa-globe-asia"></i>
+                                    Unicode to FMAbhaya</a>
+                                 <li class="list-group-item bg-dark"><a href="./fmabhaya_unicode.html"
+                                    class="custom-anchor"><i class="far fa-keyboard"></i>
+                                    FMAbhaya to Unicode</a>
+                                 </li>
+                              </ul>
+                           </li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-6">
+                  <ul class="list-group list-group-flush">
+                     <li class="list-group-item bg-dark"><a href="./index.html" class="custom-anchor"><i
+                        class="fas fa-home"></i> Home</a></li>
+                     <li class="list-group-item bg-dark"><a href="./about.html" class="custom-anchor"><i
+                        class="fas fa-info-circle"></i> About</a></li>
+                  </ul>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12  text-center text-white my-3">
+                  <span>&copy; All Rights Reserved</span>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <script src="./js/stranslations1.js"></script>
+   </body>
 </html>
