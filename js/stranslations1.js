@@ -273,7 +273,6 @@ $(document).ready(function () {
 
 function copyText() {
     var copyText = $('#unicode');
-    alert(copyText);
     copyText.select();
     document.execCommand('copy');
 }

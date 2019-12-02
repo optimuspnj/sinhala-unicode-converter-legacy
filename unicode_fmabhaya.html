@@ -66,14 +66,14 @@
 					<div class="col-md-12">
 						<span>Unicode (යුනිකෝඩ්)</span>
 						<textarea class="form-control" onkeyup="startText();" onselect="startText();" onclick="startText();" name="unicode" rows="7"></textarea>
-						<input class="btn btn-danger float-right mt-1" type="reset" value="Clear" title="Cleared!" data-toggle="popover" data-trigger="focus" data-content="All fields has been cleared!">
+						<button class="btn btn-danger float-right mt-1" type="reset" title="Cleared!" data-toggle="popover" data-trigger="focus" data-content="All fields has been cleared!"><i class="far fa-trash-alt"></i> Clear</button>
 					</div>
 				</div>
 				<div class="row">
 					<div class="col-md-12">
 						<span>FMAbhaya (අභය)</span>
 						<textarea class="form-control" id="abhaya" name="abhaya" rows="7" style="font-family:'FMAbhaya X', FMAbhaya, sans-serif!important;"></textarea>
-						<input id="copy" value="Copy" type="button" class="btn btn-success float-right mt-1" onclick="copyText()" data-toggle="popover" title="Copy" data-content="Converted text copied to clipboard.">
+						<button id="copy" type="button" class="btn btn-success float-right mt-1" onclick="copyText()" data-toggle="popover" title="Copy" data-content="Converted text copied to clipboard."><i class="far fa-clipboard"></i> Copy</button>
 					</div>
 				</div>
 			</form>
