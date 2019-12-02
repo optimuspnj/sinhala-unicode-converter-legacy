@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>SinhalaConverter.com | SinGlish Helakuru Scheme</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://kit.fontawesome.com/efd5b41ab7.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<style>
+			.custom-anchor {
+			color: #ffffff;
+			}
+			.custom-anchor:hover {
+			color: #ffffff;
+			}
+		</style>
+	</head>
+	<body onload="javascript:txtBox.box1.focus();">
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+			<a class="navbar-brand" href="./index.html">SinhalaConverter.com</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="./index.html"><i class="fas fa-home"></i> Home</a>
+					</li>
+					<li class="nav-item dropdown active">
+						<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+						<i class="fas fa-language"></i> Singlish to Unicode
+						</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="./singlish_unicode1.html"><i class="fas fa-globe-asia"></i>
+							SinGlish [UCSC] Scheme</a>
+							<a class="dropdown-item active" href="#"><i class="fas fa-mobile-alt"></i>
+							SinGlish Phonetic [Helakuru] Scheme</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+						<i class="fas fa-keyboard"></i> Wijesekara Layout & Unicode
+						</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="./unicode_fmabhaya.html"><i class="fas fa-globe-asia"></i>
+							Unicode to FMAbhaya</a>
+							<a class="dropdown-item" href="./fmabhaya_unicode.html"><i class="far fa-keyboard"></i>
+							FMAbhaya to Unicode</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./about.html"><i class="fas fa-info-circle"></i> About</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container-fluid mt-2">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<h1>Singlish to Unicode Converter</h1>
+					<h3>[SinGlish Phonetic [Helakuru] Scheme]</h3>
+				</div>
+			</div>
+			<form name="txtBox" id="txtBox">
+				<div class="row">
+					<div class="col-md-12">
+						<span>Transliterated (SinGlish Phonetic [Helakuru] Scheme)</span>
+						<textarea class="form-control" onkeyup="startText();" onselect="startText();" onclick="startText();" name="box1" rows="7"></textarea>
+						<input class="btn btn-danger float-right mt-1" type="reset" value="Clear" title="Cleared!" data-toggle="popover" data-trigger="focus" data-content="All fields has been cleared!">
+						<span style="color: red;">වැදගත් :-</span>
+						<span>යංශය ලිවීමේදී කැපිටල් Y අකුර භාවිතා කරන්න. උදාහරණය - saxkhYaawa = සංඛ්‍යාව</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<span>Unicode (යුනිකෝඩ්)</span>
+						<textarea class="form-control" name="box2" id="unicode" rows="7"></textarea>
+						<input class="btn btn-success float-right mt-1" id="copy" onclick="copyText()" type="button" value="Copy" title="Copied!" data-toggle="popover" data-content="Converted text has been copied to the clipboard.">
+					</div>
+				</div>
+			</form>
+		</div>
+		<footer class="bg-dark mt-3">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-6">
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item bg-dark">
+										<span class="custom-anchor"><i class="fas fa-language"></i> Singlish to Unicode</span>
+										<ul class="list-group list-group-flush">
+											<li class="list-group-item bg-dark"><a href="./singlish_unicode1.html"
+												class="custom-anchor"><i class="fas fa-globe-asia"></i> SinGlish [UCSC]
+												Scheme</a>
+											</li>
+											<li class="list-group-item bg-dark"><a href="#"
+												class="custom-anchor"><i class="fas fa-mobile-alt"></i> SinGlish
+												Phonetic
+												[Helakuru] Scheme</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item bg-dark">
+										<span class="custom-anchor"><i class="fas fa-keyboard"></i> Wijesekara Layout & Unicode</span>
+										<ul class="list-group list-group-flush">
+											<li class="list-group-item bg-dark"><a href="./unicode_fmabhaya.html"
+												class="custom-anchor"><i class="fas fa-globe-asia"></i>
+												Unicode to FMAbhaya</a>
+											<li class="list-group-item bg-dark"><a href="./fmabhaya_unicode.html"
+												class="custom-anchor"><i class="far fa-keyboard"></i>
+												FMAbhaya to Unicode</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item bg-dark"><a href="./index.html" class="custom-anchor"><i
+								class="fas fa-home"></i> Home</a></li>
+							<li class="list-group-item bg-dark"><a href="./about.html" class="custom-anchor"><i
+								class="fas fa-info-circle"></i> About</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12  text-center text-white my-3">
+						<span>&copy; All Rights Reserved</span>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script src="./js/stranslations2.js"></script>
+	</body>
+</html>

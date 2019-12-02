@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="https://kit.fontawesome.com/efd5b41ab7.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<style>
+			.custom-anchor {
+			color: #ffffff;
+			}
+			.custom-anchor:hover {
+			color: #ffffff;
+			}
+			.custom-zoom {
+			transition: transform .2s;
+			}
+			.custom-zoom:hover {
+			transform: scale(1.02);
+			}
+		</style>
+		<title>SinhalaConverter.com | Home</title>
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+			<a class="navbar-brand" href="#">SinhalaConverter.com</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item active">
+						<a class="nav-link" href="#"><i class="fas fa-home"></i> Home</a>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+						<i class="fas fa-language"></i> Singlish to Unicode
+						</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="./singlish_unicode1.html"><i class="fas fa-globe-asia"></i>
+							SinGlish [UCSC] Scheme</a>
+							<a class="dropdown-item" href="./singlish_unicode2.html"><i class="fas fa-mobile-alt"></i>
+							SinGlish Phonetic [Helakuru] Scheme</a>
+						</div>
+					</li>
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+						<i class="fas fa-keyboard"></i> Wijesekara Layout & Unicode
+						</a>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="./unicode_fmabhaya.html"><i class="fas fa-globe-asia"></i>
+							Unicode to FMAbhaya</a>
+							<a class="dropdown-item" href="./fmabhaya_unicode.html"><i class="far fa-keyboard"></i>
+							FMAbhaya to Unicode</a>
+						</div>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="./about.html"><i class="fas fa-info-circle"></i> About</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<div class="container-fluid mt-2">
+			<h1 class="text-center">Sinhala Unicode Real-Time Translators</h1>
+			<h1 class="text-center">සිංහල යුනිකේත එසැණ පරිවර්ථක</h1>
+			<div class="card-deck mt-3">
+				<div class="card bg-light custom-zoom">
+					<div class="card-body text-center" id="card1">
+						<h2 class="card-text">Singlish to Unicode Converter</h2>
+						<h3>[SinGlish UCSC Scheme]</h3>
+						<p class="card-text">Convert Sinhala sounds, which are written in SinGlish to Sinhala Unicode
+							letters according to University of Colombo, School of computing translator's scheme.
+						</p>
+						<p class="card-text">කොළඹ විශ්වවිද්‍යාලයේ පරිගණක අංශය මඟින් ලබාදෙන එසැණ පරිවර්ථකයේ ආකාරයට සිංග්ලිෂ්
+							වචන යුනිකේත ක්‍රමයට හැරවීම සඳහා.
+						</p>
+						<a href="./singlish_unicode1.html" class="btn btn-success" id="btn1">Singlish to Unicode Converter
+						[SinGlish [UCSC] Scheme]</a>
+					</div>
+				</div>
+				<div class="card bg-light custom-zoom">
+					<div class="card-body text-center">
+						<h2 class="card-text">Singlish to Unicode Converter</h2>
+						<h3>[SinGlish Phonetic Helakuru Scheme]</h3>
+						<p class="card-text">Convert Sinhala sounds, which are written in SinGlish to Sinhala Unicode
+							letters according to Bhasha Lanka's "Helakuru" keyboard's scheme.
+						</p>
+						<p class="card-text">භාෂා ලංකා ආයතනයේ "හෙළකුරු" යතුරු පුවරුවේ ආකාරයට සිංග්ලිෂ් වචන යුනිකේත ක්‍රමයට
+							හැරවීම සඳහා.
+						</p>
+						<a href="./singlish_unicode2.html" class="btn btn-success" id="btn2">Singlish to Unicode Converter
+						[SinGlish Phonetic [Helakuru] Scheme]</a>
+					</div>
+				</div>
+			</div>
+			<div class="card-deck mt-3">
+				<div class="card bg-light custom-zoom">
+					<div class="card-body text-center">
+						<h2 class="card-text">Unicode to FMAbhaya Converter</h2>
+						<h3>[Unicode to Wijesekara Scheme]</h3>
+						<p class="card-text">Convert Sinhala Unicode letters to FMAbhaya format with Wijesekara Sinhala
+							keyboard layout.
+						</p>
+						<p class="card-text">යුනිකේත ක්‍රමයට ලියන ලද සිංහල අකුරු, විජේසේකර යතුරු පුවරුව අනුගමනය කරන, අභය
+							අකුරු මෝස්තරයට හැරවීම සඳහා.
+						</p>
+						<a href="./unicode_fmabhaya.html" class="btn btn-success" id="btn3">Unicode to FMAbhaya
+						Converter</a>
+					</div>
+				</div>
+				<div class="card bg-light custom-zoom">
+					<div class="card-body text-center">
+						<h2 class="card-text">FMAbhaya to Unicode Converter</h2>
+						<h3>[Wijesekara to Unicode Scheme]</h3>
+						<p class="card-text">Convert FMAbhaya format with Wijesekara keyboard layout Sinhala to Unicode
+							format.
+						</p>
+						<p class="card-text">විජේසේකර යතුරු පුවරුව භාවිතා කර, අභය අකුරු මෝස්තරයෙන් ලියන ලද සිංහල අකුරු සිංහල
+							යුනිකේත බවට පරිවර්තනය.
+						</p>
+						<a href="./fmabhaya_unicode.html" class="btn btn-success" id="btn4">FMAbhaya to Unicode
+						Converter</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<footer class="bg-dark mt-3">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="row">
+							<div class="col-md-6">
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item bg-dark">
+										<span class="custom-anchor"><i class="fas fa-language"></i> Singlish to Unicode</span>
+										<ul class="list-group list-group-flush">
+											<li class="list-group-item bg-dark"><a href="./singlish_unicode1.html"
+												class="custom-anchor"><i class="fas fa-globe-asia"></i> SinGlish [UCSC]
+												Scheme</a>
+											</li>
+											<li class="list-group-item bg-dark"><a href="./singlish_unicode2.html"
+												class="custom-anchor"><i class="fas fa-mobile-alt"></i> SinGlish
+												Phonetic
+												[Helakuru] Scheme</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="col-md-6">
+								<ul class="list-group list-group-flush">
+									<li class="list-group-item bg-dark">
+										<span class="custom-anchor"><i class="fas fa-keyboard"></i> Wijesekara Layout & Unicode</span>
+										<ul class="list-group list-group-flush">
+											<li class="list-group-item bg-dark"><a href="./unicode_fmabhaya.html"
+												class="custom-anchor"><i class="fas fa-globe-asia"></i>
+												Unicode to FMAbhaya</a>
+											<li class="list-group-item bg-dark"><a href="./fmabhaya_unicode.html"
+												class="custom-anchor"><i class="far fa-keyboard"></i>
+												FMAbhaya to Unicode</a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<ul class="list-group list-group-flush">
+							<li class="list-group-item bg-dark"><a href="#" class="custom-anchor"><i
+								class="fas fa-home"></i> Home</a></li>
+							<li class="list-group-item bg-dark"><a href="./about.html" class="custom-anchor"><i
+								class="fas fa-info-circle"></i> About</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12  text-center text-white my-3">
+						<span>&copy; All Rights Reserved</span>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<script>
+			$(document).ready(function () {
+			    $("#btn1").mouseenter(function () {
+			        var btn1 = $("#btn1");
+			        btn1.animate({
+			            width: '100%'
+			        }, "fast");
+			    });
+			    $("#btn1").mouseleave(function () {
+			        var btn1 = $("#btn1");
+			        btn1.animate({
+			            width: '90%'
+			        }, "fast");
+			    });
+			
+			    $("#btn2").mouseenter(function () {
+			        var btn2 = $("#btn2");
+			        btn2.animate({
+			            width: '100%'
+			        }, "fast");
+			    });
+			    $("#btn2").mouseleave(function () {
+			        var btn2 = $("#btn2");
+			        btn2.animate({
+			            width: '90%'
+			        }, "fast");
+			    });
+			
+			    $("#btn3").mouseenter(function () {
+			        var btn3 = $("#btn3");
+			        btn3.animate({
+			            width: '100%'
+			        }, "fast");
+			    });
+			    $("#btn3").mouseleave(function () {
+			        var btn3 = $("#btn3");
+			        btn3.animate({
+			            width: '90%'
+			        }, "fast");
+			    });
+			
+			    $("#btn4").mouseenter(function () {
+			        var btn4 = $("#btn4");
+			        btn4.animate({
+			            width: '100%'
+			        }, "fast");
+			    });
+			    $("#btn4").mouseleave(function () {
+			        var btn4 = $("#btn4");
+			        btn4.animate({
+			            width: '90%'
+			        }, "fast");
+			    });
+			});
+		</script>
+	</body>
+</html>
